@@ -15,8 +15,20 @@
  * Example: export const getPromise = (bool) = return <Your promise constructor code>
  */
 
-export const getPromise = () => {
+export const getPromise = (result) => {
   // Your code goes here...
+  const promise = new Promise((resolve, reject) => {
+    if (result) {
+      resolve("The PROMISE was RESOLVED");
+    } else {
+      reject("The PROMISE was REJECTED");
+    }
+  });
+
+  promise.then(
+    (data) => console.log(data),
+    (reason) => console.log(reason)
+  );
 };
 
 /**
