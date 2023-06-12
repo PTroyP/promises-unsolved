@@ -8,10 +8,11 @@
  *          export const Promise
  */
 
-export const attachTitle = () => {
+export const attachTitle = (arg) => {
   // Your code goes here...
+  const titledName = "DR. " + arg;
+  return titledName;
 };
-
 /**
  * @task
  * Create a function that follows the requirements:
@@ -22,6 +23,9 @@ export const attachTitle = () => {
 
 export const getPromise = () => {
   // Your code goes here...
+  return Promise.resolve("MANHATTAN")
+    .then((val) => attachTitle(val))
+    .then((result) => console.log(result));
 };
 
 // === TEST YOURSELF ===
