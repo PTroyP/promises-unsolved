@@ -25,9 +25,7 @@ export const promiseArr = [promise1, promise2, promise3, promise4];
 
 // Your code goes here...
 export const handlePromise1 = Promise.all(promiseArr)
-  .then((value) => {
-    console.log(value);
-  })
+  .then((value) => console.log(value))
   .catch((e) => e);
 
 /**
@@ -83,7 +81,7 @@ export const handlePromise3 = (givenArr) => {
 export const newPromiseArr = promiseArr.filter(
   (promise) =>
     // Your code goes here...
-    promise != promise2 && promise != promise3
+    promise !== promise2 && promise !== promise3
 );
 
 // Do NOT refactor or update handlePromise4 function, it's all set to work

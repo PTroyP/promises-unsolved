@@ -68,17 +68,17 @@ export function onReject(arg) {
 
 // Your code goes here...
 export const promise = Promise.resolve(iterate(1))
-  .then((val) => iterate(val))
-  .then((val) => iterate(val))
-  .then((val) => iterate(val))
-  .then((val) => iterate(val))
-  .then(() => alwaysThrows())
-  .then((val) => iterate(val))
-  .then((val) => iterate(val))
-  .then((val) => iterate(val))
-  .then((val) => iterate(val))
-  .then((val) => iterate(val))
-  .catch((error) => onReject(error));
+  .then(iterate)
+  .then(iterate)
+  .then(iterate)
+  .then(iterate)
+  .then(alwaysThrows)
+  .then(iterate)
+  .then(iterate)
+  .then(iterate)
+  .then(iterate)
+  .then(iterate)
+  .catch(onReject);
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-9"

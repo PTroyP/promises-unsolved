@@ -23,12 +23,10 @@ export function parsePromised(jsonString) {
   // Your code goes here...
   return new Promise((resolve, reject) => {
     try {
-      JSON.parse(jsonString);
-    } catch (e) {
-      console.log("error");
+      resolve(JSON.parse(jsonString));
+    } catch (err) {
+      reject(err);
     }
-    resolve(JSON.parse(jsonString));
-    reject("Error");
   });
 }
 
@@ -62,11 +60,7 @@ export const handlePromise = (promise) => {
   return promise
     .then((val) => val)
     .catch((reason) => {
-      if (reason.message) {
-        return onReject(reason);
-      } else {
-        return reason;
-      }
+      return reason.message ? onReject(reason) : reason;
     });
 };
 
